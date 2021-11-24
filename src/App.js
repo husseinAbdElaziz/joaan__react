@@ -1,24 +1,30 @@
-import logo from './logo.svg';
+import Navbar from './components/Navbar';
+import Home from './pages/Home';
+
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar />
+      <div className='drawer h-full'>
+        <input id='my-drawer' type='checkbox' className='drawer-toggle' />
+        <div className='drawer-content'>
+          <Home />
+        </div>
+        <div className='drawer-side'>
+          <label htmlFor='my-drawer' className='drawer-overlay'></label>
+          <ul className='menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content'>
+            <li>
+              <span>Menu Item</span>
+            </li>
+            <li>
+              <span>Menu Item</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </>
   );
 }
 
